@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AuroraBehaviorPacket",
+  "type": "object",
+  "properties": {
+    "intent": {
+      "type": "string",
+      "description": "Primary behavior intent such as walk, run, jump, flirt, etc."
+    },
+    "locomotion": {
+      "type": "object",
+      "properties": {
+        "VelocityX": {
+          "type": "number"
+        },
+        "VelocityY": {
+          "type": "number"
+        },
+        "StandStyle": {
+          "type": "number"
+        },
+        "LocomotionMode": {
+          "type": "integer",
+          "enum": [
+            0,
+            1,
+            2
+          ]
+        }
+      },
+      "required": [
+        "VelocityX",
+        "VelocityY",
+        "StandStyle",
+        "LocomotionMode"
+      ]
+    },
+    "gesture": {
+      "type": "object",
+      "properties": {
+        "ArmBlendH": {
+          "type": "number"
+        },
+        "ArmBlendV": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "ArmBlendH",
+        "ArmBlendV"
+      ]
+    },
+    "outfit": {
+      "type": "object",
+      "properties": {
+        "HatToggle": {
+          "type": "boolean"
+        },
+        "JacketToggle": {
+          "type": "boolean"
+        }
+      },
+      "required": []
+    }
+  },
+  "required": [
+    "intent",
+    "locomotion",
+    "gesture"
+  ]
+}
